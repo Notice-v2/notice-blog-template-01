@@ -11,14 +11,14 @@ import { ParagraphBlock } from './Paragraph.block'
 import { QuoteBlock } from './Quote.block'
 export function renderBlock(block: any) {
 	switch (block.type) {
+		case 'image':
+			return <ImageBlock key={block.id} block={block} />
 		case 'paragraph':
 			return <ParagraphBlock key={block.id} block={block} />
 		case 'heading':
 			return <HeaderBlock key={block.id} block={block} />
 		case 'blockquote':
 			return <QuoteBlock key={block.id} block={block} />
-		case 'image':
-			return <ImageBlock key={block.id} block={block} />
 		case 'hint':
 			return <HintBlock key={block.id} block={block} />
 		case 'codeBlock':

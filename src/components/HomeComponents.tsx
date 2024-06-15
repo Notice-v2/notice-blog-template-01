@@ -3,7 +3,6 @@
 import { Box } from '@chakra-ui/react'
 import { ArticlesGrid } from './ArticlesGrid'
 import { BlogHero } from './BlogHero'
-import { Navbar } from './Navbar'
 import { RecentArticles } from './RecentArticles'
 
 interface Props {
@@ -13,7 +12,6 @@ interface Props {
 export const HomeComponents = ({ data }: Props) => {
 	return (
 		<Box>
-			<Navbar meta={data?.metadata ?? []} />
 			<Box mt={{ base: '40px', lg: '80px' }} as="section">
 				<BlogHero page={data?.pages?.[0]} accentColor={data?.project?.accentColor} />
 			</Box>
