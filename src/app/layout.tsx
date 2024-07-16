@@ -13,7 +13,6 @@ export default async function RootLayout({
 }>) {
 	const projectData = await getProjectData()
 	const { hideCreatedWithNotice, headCode } = projectData?.project || {}
-	console.log('projectData', headCode)
 
 	return (
 		<html lang="en">
