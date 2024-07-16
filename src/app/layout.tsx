@@ -1,10 +1,8 @@
-import { CustomCodeInjector } from '@/components/CustomCodeInjector'
 import { Navbar } from '@/components/Navbar'
 import { NoticeLabel } from '@/components/NoticeLabel'
 import { Providers } from '@/providers'
 import { API, extractProjectID } from '@/tools/api'
 import { headers } from 'next/headers'
-import Script from 'next/script'
 
 export default async function RootLayout({
 	children,
@@ -16,11 +14,11 @@ export default async function RootLayout({
 
 	return (
 		<html lang="en">
-			<head>
+			{/* <head>
 				<Script id="custom-code-script" strategy="afterInteractive">
-					{`window.__CUSTOM_CODE__ = ${JSON.stringify(headCode)};`}
+					{`window.__CUSTOM_CODE__ = ${JSON.stringify(headCode?.trim())};`}
 				</Script>
-			</head>
+			</head> */}
 
 			<body>
 				<Providers>
@@ -28,7 +26,6 @@ export default async function RootLayout({
 					{children}
 					<NoticeLabel shouldHide={hideCreatedWithNotice} />
 				</Providers>
-				<CustomCodeInjector />
 			</body>
 		</html>
 	)
